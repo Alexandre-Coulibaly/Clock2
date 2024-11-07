@@ -2,9 +2,12 @@
 
 Members :
 
-Ludovic Gable /n \n
-Alexandre Coulibaly 
+Ludovic Gable
+
+Alexandre Coulibaly
+
 Loic Girardin
+
 Guillaume Tricot
 
 
