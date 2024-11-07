@@ -10,4 +10,4 @@ Guillaume Tricot
 
 
 
-https://colab.research.google.com/drive/1-kSqVSv8VLu-eR4FQJt96LCkGQBRqw69?usp=sharing
+https://docs.google.com/document/d/1ZVPLUvjA2GrrxwxdlEvfV2Vkr51Eq6wLCMPRW-Ptcac/edit?usp=drivesdk
