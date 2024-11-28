@@ -22,6 +22,7 @@ Utilisation of buttons :
 
 (photo des boutons et branchements sur la carte avec chiffre correspondant au bouton) 
 
+---------------------------------------------------------------------------------------------------------------
 1st mode : NORMAL MODE: 
 
   1 : Activate/Desactivate the Alarm
@@ -51,7 +52,7 @@ Utilisation of buttons :
 
   6 :
 
-
+---------------------------------------------------------------------------------------------------------------
 3rd mode : SET ALARM:
  
   1 :
@@ -66,7 +67,7 @@ Utilisation of buttons :
  
   6 :
 
-
+---------------------------------------------------------------------------------------------------------------
 4th mode : SET COLOR:
  
   1 :
@@ -81,7 +82,7 @@ Utilisation of buttons :
   
   6 :
   
-
+---------------------------------------------------------------------------------------------------------------
 5th mode : SET UTC:
   
   1 :
