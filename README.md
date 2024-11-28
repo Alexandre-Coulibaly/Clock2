@@ -1,4 +1,4 @@
-# Project
+# Project : Digital clock
 ## Team members:
 Member 1: GABLE Ludovic (responsible for ...)
 
