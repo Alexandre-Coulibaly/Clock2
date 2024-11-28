@@ -1,6 +1,6 @@
 # Project Digital Clock
 
-# Members :
+## Members :
 
 Ludovic GABLE
 
