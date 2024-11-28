@@ -1,14 +1,14 @@
 # Project Digital Clock
 
-Members :
+# Members :
 
-Ludovic Gable
+Ludovic GABLE
 
-Alexandre Coulibaly
+Alexandre COULIBALY
 
-Loic Girardin
+Loic GIRARDIN
 
-Guillaume Tricot
+Guillaume TRICOT
 
 
 
