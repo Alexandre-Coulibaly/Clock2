@@ -36,8 +36,8 @@ Utilisation of buttons :
   
   6 : Reboot the ALARM and the sound when it goes to the set time
 
-
-## 2nd mode : SET TIME:
+---------------------------------------------------------------------------------------------------------------
+2nd mode : SET TIME:
  
   1 :
  
