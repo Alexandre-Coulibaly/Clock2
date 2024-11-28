@@ -16,49 +16,84 @@ Design and implement a digital clock using NeoPixel displays. The clock will dis
 
 ## Software description :
 
-###### Instructions and photos :
+## Instructions and photos :
 
 Utilisation of buttons :
+
 (photo des boutons et branchements sur la carte avec chiffre correspondant au bouton) 
 
 1st mode : NORMAL MODE: 
+
   1 : Activate/Desactivate the Alarm
+  
   2 : Switch to the mode SET TIME
+  
   3 : Switch to the mode SET ALARM
+  
   4 : Switch to the mode COLOR
+  
   5 : Switch to the mode SET UTC
+  
   6 : Reboot the ALARM and the sound when it goes to the set time
 
+
 2nd mode : SET TIME:
+ 
   1 :
+ 
   2 : Add 1 hour 
+ 
   3 : Add 1 minute
+  
   4 : Validate changes and switch to NORMAL MODE
+  
   5 : Cancel changes and switch to NORMAL MODE
+
   6 :
+
 
 3rd mode : SET ALARM:
+ 
   1 :
+ 
   2 : Add 1 hour 
+ 
   3 : Add 1 minute
+ 
   4 : Validate changes and switch to NORMAL MODE
+ 
   5 : Cancel changes and switch to NORMAL MODE
+ 
   6 :
 
+
 4th mode : SET COLOR:
+ 
   1 :
+ 
   2 : Change the color
+ 
   3 : Change the brigthness
+  
   4 : Switch to the NORMAL MODE
+  
   5 : Switch to the NORMAL MODE
+  
   6 :
   
+
 5th mode : SET UTC:
+  
   1 :
+ 
   2 : Connexion to WIFI to change the clock 
+ 
   3 : Add 1 minute
+ 
   4 : Validate changes and switch to NORMAL MODE
+  
   5 : Cancel changes and switch to NORMAL MODE
+  
   6 :
 
   
