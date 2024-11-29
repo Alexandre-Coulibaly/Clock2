@@ -14,6 +14,48 @@ Design and implement a digital clock using NeoPixel displays. The clock will dis
 
 ## Hardware description :
 
+Components Used :
+
+ESP32 Board :
+
+Microcontroller with high performance, low power consumption and built-in Wi-Fi/Bluetooth capabilities, which can also enable future enhancements such as time synchronization via the internet.
+
+---------------------------------------------------------------------------------------------------------------
+Four 7-Segment Display :
+
+8 digits, each made up of 14 LEDs 
+
+Two central LEDs to separate the left and right groups (as in a digital clock).
+
+---------------------------------------------------------------------------------------------------------------
+Buttons :
+
+for user interaction:
+
+Set the time/alarm
+
+Enable/Disable the alarm
+
+Change the led's color
+
+Change the brigthness
+
+Reset the system
+
+---------------------------------------------------------------------------------------------------------------
+Emits a sound to indicate an alarm or specific events.
+
+Key Features :
+
+Time Display: The 7-segment display shows the time, with the central LEDs separating hours and minutes.
+
+Button Control: Buttons allow for time configuration, alarm management and specific changes.
+
+Sound Alarm: The buzzer produces a configurable sound for the alarm.
+
+Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
+
+
 ## Software description :
 
 ## Instructions and photos :
