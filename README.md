@@ -104,6 +104,7 @@ ________________________________________________________________________________
   5 : Cancel changes and switch to NORMAL MODE
 
   6 :
+  
   ![image](https://github.com/user-attachments/assets/735eaadc-d67f-4e7d-8469-5c855a8fe7ce)
 
 
