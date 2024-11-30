@@ -90,7 +90,9 @@ Utilisation of buttons :
   
   6 : Reboot the ALARM and the sound when it goes to the set time
 
-______________________________________________________________________________________________________________
+
+  ![image](https://github.com/user-attachments/assets/f6d6abd8-6e1e-4323-8d77-b3c2dc9729df)
+_________________________________________________________________________________________________________
 2nd mode : SET TIME:
  
   1 :
