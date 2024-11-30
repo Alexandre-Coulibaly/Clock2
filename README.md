@@ -59,6 +59,7 @@ Sound Alarm: The buzzer produces a configurable sound for the alarm.
 
 Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
 
+![image](https://github.com/user-attachments/assets/64eec7cb-6281-40d6-8717-3d1d4f2c6b2a)
 
 
 
