@@ -48,6 +48,8 @@ Reset the system
 
 Emits a sound to indicate an alarm or specific events
 
+![image](https://github.com/user-attachments/assets/7ae84308-d324-4973-9412-1edd96a0389f)
+
 ---------------------------------------------------------------------------------------------------------------
 Key Features :
 
