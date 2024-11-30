@@ -42,8 +42,9 @@ Change the brigthness
 
 Reset the system
 
+Emits a sound to indicate an alarm or specific events
 ---------------------------------------------------------------------------------------------------------------
-Emits a sound to indicate an alarm or specific events.
+
 
 Key Features :
 
