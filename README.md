@@ -43,9 +43,8 @@ Change the brigthness
 Reset the system
 
 Emits a sound to indicate an alarm or specific events
+
 ---------------------------------------------------------------------------------------------------------------
-
-
 Key Features :
 
 Time Display: The 7-segment display shows the time, with the central LEDs separating hours and minutes.
@@ -55,6 +54,8 @@ Button Control: Buttons allow for time configuration, alarm management and speci
 Sound Alarm: The buzzer produces a configurable sound for the alarm.
 
 Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
+
+
 
 
 ## Software description :
