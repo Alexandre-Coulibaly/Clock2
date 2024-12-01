@@ -89,19 +89,52 @@ Each function calls other classes to execute the corresponding operations.
 Then we have the "[alarm](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/alarm.py)" class, which initializes a button and a buzzer, plays a sound with the buzzer, checks whether the button is pressed, and executes an alarm management loop.
 First we define the pins for the button and buzzer, then we initialize the button as input and the buzzer as PWM output.
 
-The play_sound function sounds the buzzer for 0.5s.
+The ```play_sound``` function sounds the buzzer for 0.5s.
 
 The duty cycle is set to 50%, which activates the buzzer sound, but not to its maximum (100%).
 
-The check_button_press function checks whether the button is pressed.
+The ```check_button_press``` function checks whether the button is pressed.
 If the button is pressed (low state), a delay of 0.05 seconds is introduced to avoid errors.
 Button pressure is checked again after the delay. If the button is still pressed, the function returns ```True``` and will then turn off the alarm.
 
-The alarm_loop function manages the alarm loop. As long as the alarm is in progress, the function checks whether the button is pressed. If the button is pressed (previous function), the alarm stops.
+The ```alarm_loop``` function manages the alarm loop. As long as the alarm is in progress, the function checks whether the button is pressed. If the button is pressed (previous function), the alarm stops.
 If not, the buzzer sounds at regular 0.5-second intervals.
 On leaving the loop, the buzzer is deactivated.
 
 ---------------------------------------------------------------------------------------------------------------
+Let's take a look at the “[button](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/button.py)” class. 
+
+First, the class initializes several variables to track the state of the clock, alarm, colors, brightness and time zones. Lists of time zones and cities are also initialized.
+
+The handle_button_press function manages button actions according to the current clock mode, as described in the “Instructions” section.
+
+The ``get_current_state`` function returns the current clock state for display.
+
+Each button has a specific function depending on the current clock mode.
+
+---------------------------------------------------------------------------------------------------------------
+The “[display](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/display.py)” class initializes and manages the LED display for a clock, controlling the colors, brightness and segments displayed for the hour and minute digits. It configures the overall color and brightness, and displays the hours, minutes and flashing colon between them.
+
+LEDs are initialized using the ``neopixel'' library and pin configuration.
+We also create a dictionary that defines which LED to switch on to display each digit from 0 to 9.
+
+With ```display_digit``` we configure the LEDs to display the corresponding digit on the chosen display, avoiding the two dots in the middle.
+
+```Display_minutes``` displays the tens and units of minutes on the respective displays.
+
+```Display_hours``` displays tens and units of hours on the respective displays.
+
+```Display_colon``` switches the LEDs of the two dots between hours and minutes on and off.
+
+```set_color``` changes the display color and applies the new color to all LEDs.
+
+```set_brightness``` changes the brightness and ensures that it remains within a valid range.
+
+```apply_color_to_leds``` changes the color of all LEDs according to the brightness set.
+
+``apply_brightness`` returns the current brightness value.
+
+
 
 
 ## Instructions and photos :
