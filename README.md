@@ -69,9 +69,12 @@ Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
 
 ## Software description :
 
+First we have the "main", which represents the main loop where all program operations take place. It constantly monitors button inputs, updates the display and manages alarms:
+https://github.com/Alexandre-Coulibaly/Clock2/blob/main/main.py
+
 ## Instructions and photos :
 
-Utilisation of buttons :
+How to use buttons :
 
 (photo des boutons et branchements sur la carte avec chiffre correspondant au bouton) 
 
