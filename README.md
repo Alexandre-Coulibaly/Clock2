@@ -69,8 +69,40 @@ Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
 
 ## Software description :
 
-First we have the "main", which represents the main loop where all program operations take place. It constantly monitors button inputs, updates the display and manages alarms:
-https://github.com/Alexandre-Coulibaly/Clock2/blob/main/main.py
+First we have the "[main](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/main.py)", which represents the main loop where all program operations take place. It constantly monitors button inputs, updates the display and manages alarms:
+
+Thanks to this, we can:
+
+Flash the colon every 500 ms.
+
+Check if a button is pressed and manage the corresponding actions.
+
+Check whether the current time corresponds to the alarm time and trigger it if necessary.
+
+Change display brightness at specific times.
+
+Update the time display at each loop iteration.
+
+Each function calls other classes to execute the corresponding operations.
+
+---------------------------------------------------------------------------------------------------------------
+Then we have the "[alarm](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/alarm.py)" class, which initializes a button and a buzzer, plays a sound with the buzzer, checks whether the button is pressed, and executes an alarm management loop.
+First we define the pins for the button and buzzer, then we initialize the button as input and the buzzer as PWM output.
+
+The play_sound function sounds the buzzer for 0.5s.
+
+The duty cycle is set to 50%, which activates the buzzer sound, but not to its maximum (100%).
+
+The check_button_press function checks whether the button is pressed.
+If the button is pressed (low state), a delay of 0.05 seconds is introduced to avoid errors.
+Button pressure is checked again after the delay. If the button is still pressed, the function returns ```True``` and will then turn off the alarm.
+
+The alarm_loop function manages the alarm loop. As long as the alarm is in progress, the function checks whether the button is pressed. If the button is pressed (previous function), the alarm stops.
+If not, the buzzer sounds at regular 0.5-second intervals.
+On leaving the loop, the buzzer is deactivated.
+
+---------------------------------------------------------------------------------------------------------------
+
 
 ## Instructions and photos :
 
