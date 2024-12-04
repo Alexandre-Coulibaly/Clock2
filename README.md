@@ -159,7 +159,8 @@ How to use buttons :
   6 : Reboot the ALARM and the sound when it goes to the set time
 
 
-  ![image](https://github.com/user-attachments/assets/f6d6abd8-6e1e-4323-8d77-b3c2dc9729df)
+![image](https://github.com/user-attachments/assets/9780860a-7095-458f-a40c-135fdf85c55f)
+
 _________________________________________________________________________________________________________
 2nd mode : SET TIME:
  
@@ -177,7 +178,8 @@ ________________________________________________________________________________
   
 
 
-![image](https://github.com/user-attachments/assets/bba1a103-32f6-440a-b7fb-65048f4def83)
+![image](https://github.com/user-attachments/assets/019bba5b-209b-4f68-86c4-f15e4b0d35b3)
+
 ---------------------------------------------------------------------------------------------------------------
 3rd mode : SET ALARM:
  
@@ -194,7 +196,8 @@ ________________________________________________________________________________
   6 :
 
 
-![image](https://github.com/user-attachments/assets/4cedfb45-482f-4579-9691-948ba312cc88)
+![image](https://github.com/user-attachments/assets/1a78f72c-ee06-40c9-b1fd-e4da43d91065)
+
 ---------------------------------------------------------------------------------------------------------------
 4th mode : SET COLOR:
  
@@ -211,7 +214,8 @@ ________________________________________________________________________________
   6 :
 
 
-  ![image](https://github.com/user-attachments/assets/325b50f7-9a0d-431d-940e-ddc8a186bcb9)
+![image](https://github.com/user-attachments/assets/e90cec32-3f51-4e9d-81b7-2c7ff99edbe1)
+
 
 ---------------------------------------------------------------------------------------------------------------
 5th mode : SET UTC:
@@ -229,7 +233,8 @@ ________________________________________________________________________________
   6 :
 
 
-![image](https://github.com/user-attachments/assets/134238a4-4319-4908-9686-e9fe4afe1cc4)
+![image](https://github.com/user-attachments/assets/bd4785e9-8bfd-41d3-9d6a-736390044f2e)
+
 
 ## References and tools :
 
