@@ -1,5 +1,13 @@
 # Project : Digital clock
-## Team members:
+
+## Structure:
+- Team Memebers
+- Goal
+- Hardware description
+- Software description
+- Instructions and photos
+
+## Team Members:
 Member 1: GABLE Ludovic (responsible for grouping of all codes, main and buttons)
 
 Member 2: COULIBALY Alexandre (responsible for the alarm and buttons)
@@ -173,8 +181,6 @@ The function ```connect``` checks if the device is already connected to Wi-Fi. I
 ## Instructions and photos :
 
 How to use buttons :
-
-(photo des boutons et branchements sur la carte avec chiffre correspondant au bouton) 
 
 ---------------------------------------------------------------------------------------------------------------
 1st mode : NORMAL MODE: 
