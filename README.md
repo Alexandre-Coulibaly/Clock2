@@ -1,7 +1,7 @@
 # Project : Digital clock
 
 ## Structure:
-- [Team Memebers](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#team-members)
+- [Team Memebers](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#team-members)
 - [Goal](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#goal-)
 - [Hardware description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#hardware-description-)
 - [Software description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
