@@ -1,6 +1,6 @@
 # Project : Digital clock
 ## Team members:
-Member 1: GABLE Ludovic (responsible for grouping of all codes and buttons)
+Member 1: GABLE Ludovic (responsible for grouping of all codes, main and buttons)
 
 Member 2: COULIBALY Alexandre (responsible for the alarm and buttons)
 
