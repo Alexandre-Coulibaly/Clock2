@@ -1,11 +1,12 @@
 # Project : Digital clock
 
 ## Structure:
-- Team Memebers
-- Goal
-- Hardware description
-- Software description
-- Instructions and photos
+- [Team Memebers](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#team-members)
+- [Goal](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#goal-)
+- [Hardware description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#hardware-description-)
+- [Software description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
+- [Instructions and photos](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
+- [References and tools](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
 
 ## Team Members:
 Member 1: GABLE Ludovic (responsible for grouping of all codes, main and buttons)
