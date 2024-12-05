@@ -158,7 +158,21 @@ tim.init(period=100, mode=Timer.PERIODIC, callback=stopwatch_100ms)
 ```
 ---------------------------------------------------------------------------------------------------------------
 
+Finally, there is the "[wifi](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/wifi.py)" class. This code connects the device to a specified Wi-Fi network and synchronizes the device's time using NTP.
 
+First, we have to import modules like ```network``` for Wi-Fi functions, ```ntptime``` for getting the current time via NTP, and ```time``` for handling time-related functions.
+
+```
+WIFI_SSID = 'SSID'
+WIFI_PASSWORD = 'PSWD'
+```
+These lines set the SSID and password for the Wi-Fi network we want to connect to.
+
+Then, The function ```connect_wifi``` attempts to connect to the specified Wi-Fi network. It initializes the Wi-Fi module and tries to connect within a 30-second timeout period. It prints the connection status and IP address once connected.
+
+```get_wifi_time``` synchronizes the current time using NTP. It retrieves the local time and returns the current hour, minute, and second. If there’s an error, it prints the error message and returns ```None```.
+
+The function ```connect``` checks if the device is already connected to Wi-Fi. If not, it calls ```connect_wifi```to establish the connection.
 
 ## Instructions and photos :
 
