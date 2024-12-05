@@ -181,6 +181,16 @@ The function ```connect``` checks if the device is already connected to Wi-Fi. I
 
 ## Instructions and photos :
 
+![image](https://github.com/user-attachments/assets/69ec24e6-6427-40ee-bdd0-f36d80c63516)
+
+
+![image](https://github.com/user-attachments/assets/523c591a-5d90-46a0-93ae-b214be0b4d48)
+
+
+
+
+
+
 How to use buttons :
 
 ---------------------------------------------------------------------------------------------------------------
