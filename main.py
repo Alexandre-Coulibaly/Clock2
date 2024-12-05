@@ -6,96 +6,102 @@ from alarm import alarm_loop
 import time
 
 
-# Initialisation des broches pour les boutons
-button_pins = {
-    1: Pin(25, Pin.IN, Pin.PULL_UP),  # Bouton 1 - Allumer/Éteindre l'alarme
-    2: Pin(26, Pin.IN, Pin.PULL_UP),  # Bouton 2 - Mode ou +1 Heure
-    3: Pin(27, Pin.IN, Pin.PULL_UP),  # Bouton 3 - +1 Minute
-    4: Pin(13, Pin.IN, Pin.PULL_UP),  # Bouton 4 - Valider
-    5: Pin(5, Pin.IN, Pin.PULL_UP),  # Bouton 5 - Annuler
+# Initializing buttons
+button_pins = {   #use in main
+    1: Pin(25, Pin.IN, Pin.PULL_UP),  # Bouton 1 - On/off Alarm 
+    2: Pin(26, Pin.IN, Pin.PULL_UP),  # Bouton 2 - settime
+    3: Pin(27, Pin.IN, Pin.PULL_UP),  # Bouton 3 - setalarm
+    4: Pin(13, Pin.IN, Pin.PULL_UP),  # Bouton 4 - setcolor
+    5: Pin(5, Pin.IN, Pin.PULL_UP),  # Bouton 5 - setUTC
 }
 
-# Initialisation du contrôleur de boutons
+# Initializing buttons Controller()
 button_controller = ButtonController()
 
-# Variables pour gérer l'affichage des deux points
-colon_state = True  # Les deux points clignotent
+# Variables to manage the display of the two points
+colon_state = True  # The two dots are flashing
 last_colon_toggle = time.ticks_ms()
 
 def read_buttons():
     """
-    Vérifie quel bouton est pressé.
-    :return: Numéro du bouton pressé ou None
+    verify if the button is pressed
+    :return: number of the button pressed or None
     """
     for button, pin in button_pins.items():
-        if not pin.value():  # Bouton pressé (LOW = actif avec PULL_UP)
-            time.sleep(0.3)  # Anti-rebond
+        if not pin.value():  # Button pressed (value = 0 when pressed in PULL_UP)
+            time.sleep(0.3)  # Anti-rebound
             return button
     return None
 
 def update_display():
     """
-    Met à jour l'affichage des LEDs en fonction du mode et des valeurs en cours.
+    Updates the display of the LEDs according to the current mode and values.
     """
     state = button_controller.get_current_state()
     
    
     if state["mode"] == "set_time":
-        # Mode réglage de l'heure : Affiche les valeurs temporaires
+        # set time mode: Displays temporary values
         display_hours(button_controller.currenthold_hour)
         display_minutes(button_controller.currenthold_minute)
     elif state["mode"] == "set_alarm":
-        # Mode réglage de l'alarme : Affiche les valeurs temporaires
+        # set alarm mode: Displays temporary values
         display_hours(button_controller.alarmhold_hour)
         display_minutes(button_controller.alarmhold_minute)
     elif state["mode"] == "set_UTC":
-        # Mode réglage de l'heure : Affiche les valeurs temporaires
+        # setUTC mode : Displays temporary values
         display_hours(button_controller.currenthold_hour)
         display_minutes(button_controller.currenthold_minute)
     else:
-    # Mode normal, set_color, etc : Affiche l'heure actuelle
+        # normal mode or setcolor: Displays the current time
         hours, minutes = get_current_time()
         display_hours(hours)
         display_minutes(minutes)
 
 
-    # Affiche les deux points clignotants dans tous les cas
+    # Displays the two flashing dots in all cases
     display_colon(colon_state)
 
 
-# Boucle principale
+# Main loop
 while True:
-    # Clignotement des deux points
-    if time.ticks_diff(time.ticks_ms(), last_colon_toggle) > 500:  # Changement toutes les 500 ms
+    # flashing of the two dots
+    if time.ticks_diff(time.ticks_ms(), last_colon_toggle) > 500:  # Change every 500 ms
+
         colon_state = not colon_state
         display_colon(colon_state)
         last_colon_toggle = time.ticks_ms()
 
-    # Vérifie si un bouton est pressé
+    # verify if a button is pressed
     pressed_button = read_buttons()
 
     if pressed_button:
-        print(f"Bouton {pressed_button} pressé")
-        button_controller.handle_button_press(pressed_button)  # Gérer l'action du bouton
-        update_display()  # Met à jour l'affichage après une action
-        print("État actuel :", button_controller.get_current_state())
+        print(f"Button {pressed_button} pressed")
+        button_controller.handle_button_press(pressed_button)  # Manage button action
+        update_display()  # Updates the display after an action
+        print("Current states :", button_controller.get_current_state())
     
-    if button_controller.alarm_active:  # Si l'alarme est activée
-        current_hour, current_minute = get_current_time()  # Récupère l'heure actuelle
+    if button_controller.alarm_active:  # If alarm activated
+        current_hour, current_minute = get_current_time()  #Take current time
         if (current_hour == button_controller.alarm_hour and
             current_minute == button_controller.alarm_minute):
-            print("L'alarme est déclenchée !")
-            alarm_loop()  # Lance la boucle d'alarme
-            button_controller.alarm_active = False  # Désactive l'alarme après déclenchement
+            print("alarm is triggered !")
+            alarm_loop()  # Initiates the alarm loop
+            button_controller.alarm_active = False  # Disables the alarm after triggering
     
-    current_hour, current_minute = get_current_time()
+    # Automatic brightness change
+    current_hour, current_minute = get_current_time()  #Take current time
     BRIGHTNESS =get_BRIGHTNESS()
-    if (current_hour == 21) and (current_minute == 01) and (BRIGHTNESS != 0.3):
+    if (current_hour == 21) and (current_minute == 01) and (BRIGHTNESS != 0.3): #look if time is matching
         set_brightness(0.3)
-    elif (current_hour == 8) and (current_minute == 01) and (BRIGHTNESS != 0.7):
+    elif (current_hour == 8) and (current_minute == 01) and (BRIGHTNESS != 0.7): #look if time is matching
         set_brightness(0.7)
-# Met à jour l'affichage
+    # Updates the display
     
     update_display()
    
-    time.sleep(0.1)  # Anti-rebond simple
+    time.sleep(0.1)  # anti-rebound
+    
+
+
+
