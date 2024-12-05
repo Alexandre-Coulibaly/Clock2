@@ -2,11 +2,11 @@
 
 ## Structure:
 - [Team Memebers](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#team-members)
-- [Goal](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#goal-)
-- [Hardware description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#hardware-description-)
-- [Software description](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
-- [Instructions and photos](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
-- [References and tools](https://github.com/Alexandre-Coulibaly/Clock2/edit/main/README.md#software-description-)
+- [Goal](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#goal-)
+- [Hardware description](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#hardware-description-)
+- [Software description](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#hardware-description-)
+- [Instructions and photos](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#instructions-and-photos-)
+- [References and tools](https://github.com/Alexandre-Coulibaly/Clock2/?tab=readme-ov-file#references-and-tools-)
 
 ## Team Members:
 Member 1: GABLE Ludovic (responsible for grouping of all codes, main and buttons)
