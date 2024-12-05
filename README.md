@@ -107,7 +107,7 @@ If not, the buzzer sounds at regular 0.5-second intervals.
 On leaving the loop, the buzzer is deactivated.
 
 ---------------------------------------------------------------------------------------------------------------
-Let's take a look at the “[button](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/button.py)” class. 
+Let's take a look at the “[button_control](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/button_control.py)” class. 
 
 First, the class initializes several variables to track the state of the clock, alarm, colors, brightness and time zones. Lists of time zones and cities are also initialized.
 
