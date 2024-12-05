@@ -1,12 +1,12 @@
 # Project : Digital clock
 ## Team members:
-Member 1: GABLE Ludovic (responsible for ...)
+Member 1: GABLE Ludovic (responsible for grouping of all codes and buttons)
 
-Member 2: COULIBALY Alexandre (responsible for ...)
+Member 2: COULIBALY Alexandre (responsible for the alarm and buttons)
 
-Member 3: TRICOT Guillaume (responsible for ...)
+Member 3: TRICOT Guillaume (responsible for the display and timer)
 
-Member 4: GIRARDIN Loïc (responsible for ...)
+Member 4: GIRARDIN Loïc (responsible for the connection to internet and timer)
 
 ## Goal :
 
@@ -134,6 +134,29 @@ With ```display_digit``` we configure the LEDs to display the corresponding digi
 
 ``apply_brightness`` returns the current brightness value.
 
+---------------------------------------------------------------------------------------------------------------
+
+We will now take a look at the "[timer](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/timer.py)" class. This class configures a stopwatch that tracks elapsed time in hundredths of a second, seconds, minutes and hours, and allows setting and viewing of the current time.
+
+The function ```stopwatch_100ms``` is called every 100 milliseconds by the timer. It increments the tenths of a second (```tenths```). When it reaches 10, it resets to 0 and increments the seconds (```secs```). Similarly, it manages the incrementation of minutes (```mins```) and hours (```hours```), looping after 24 hours.
+
+```set_current_time``` and ```set_current_time_wifi``` are used to manually update the current time. The second function also allows setting the seconds.
+
+The function ```get_current_time``` returns the current hours and minutes.
+
+Finally, all the necessary global variables are initialized, and the Timer is set up to call ```stopwatch_100ms``` every 100 milliseconds (period=100): 
+
+```
+tenths = 0
+secs = 0
+mins = 0
+hours = 0
+colon_state = True
+
+tim = Timer(0)
+tim.init(period=100, mode=Timer.PERIODIC, callback=stopwatch_100ms)
+```
+---------------------------------------------------------------------------------------------------------------
 
 
 
