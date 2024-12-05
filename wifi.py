@@ -1,4 +1,3 @@
-# Importation des modules nécessaires
 import network
 import ntptime
 import time
@@ -6,59 +5,59 @@ import time
 
 
 
-# === Configuration Wi-Fi ===
+# Configuration Wi-Fi
 WIFI_SSID = 'T Moch'
 WIFI_PASSWORD = 'Pignoufs'
 
 
 
 
-# === Gestion de la connexion Wi-Fi ===
+#  Management  of Wi-Fi Connection
 def connect_wifi(ssid, password):
     """
-    Connecte l'appareil au réseau Wi-Fi spécifié.
+    Connects the device to the specified Wi-Fi network.
     """
-    print("Connexion au réseau Wi-Fi...")
+    print("Network Connection Wi-Fi...")
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, password)
     
-    # Attendre que la connexion soit établie avec un timeout
-    timeout = 30  # Limite de temps en secondes
+    # Wait for the connection to be established with a timeout
+    timeout = 30  # Time limit in seconds
     start_time = time.time()
         
         
     while not wlan.isconnected():
         if time.time() - start_time > timeout:
-            print("Impossible de se connecter au Wi-Fi. Vérifiez les informations d'identification.")
+            print("Impossible to get connected to the wifi... Verify information.")
             return False
         time.sleep(1)
-        print("Connexion en cours...")
+        print("Try to Connect...")
     
-    print("Connecté au Wi-Fi:")
-    print("Adresse IP:", wlan.ifconfig()[0])
+    print("Connected to the Wi-Fi:")
+    print("IP Address :", wlan.ifconfig()[0])
     return True
 
 
 
 
-# === Synchronisation de l'heure via NTP ===
+# Time synchronization via NTP
 def get_wifi_time():
     """
-    Récupère l'heure actuelle via NTP et la retourne sous forme d'heures et minutes.
+    Retrieves the current time via NTP and returns it as hours and minutes.
     """
     try:
-        print("Synchronisation de l'heure via NTP...")
-        ntptime.settime()  # Obtenir l'heure via NTP
-        wifi_current_time = time.localtime()  # Récupérer l'heure locale
+        print("Time synchronization via NTP...")
+        ntptime.settime()  # Get the time via NTP
+        wifi_current_time = time.localtime()  # get local time
         wifi_hour = wifi_current_time[3]
         wifi_minute = wifi_current_time[4]
         wifi_seconde = wifi_current_time[5]
-        print(f"Heure actuelle : {wifi_hour:02}:{wifi_minute:02}")
+        print(f"Current Time : {wifi_hour:02}:{wifi_minute:02}")
         return wifi_hour, wifi_minute, wifi_seconde
     except Exception as e:
-        print("Erreur de synchronisation de l'heure NTP:", e)
-        return None  # Valeur claire en cas d'erreur
+        print("NTP Time Sync Error:", e)
+        return None 
 
 
 
@@ -73,8 +72,3 @@ def connect(ssid, password):
     else:
         connect_wifi(ssid, password)
         return
-
-
-
-
-
