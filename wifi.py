@@ -4,7 +4,6 @@ import time
 
 
 
-
 # Configuration Wi-Fi
 WIFI_SSID = 'T Moch'
 WIFI_PASSWORD = 'Pignoufs'
