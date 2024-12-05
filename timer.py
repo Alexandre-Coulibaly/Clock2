@@ -1,62 +1,65 @@
 from machine import Timer
 from display import display_hours, display_minutes, display_colon
 
-# === Chronomètre ===
+# Chronometer
 def stopwatch_100ms(t):
-    """Interrupt handler de Timer exécuté toutes les 100ms."""
+    """Interrupt handler de Timer Run every 100 ms."""
     global tenths, secs, mins, hours, colon_state
 
-    # Incrémente les centièmes de seconde
+    # Increments tenths of a second
     tenths += 1
     if tenths >= 10:
         tenths = 0
         secs += 1
 
-        # Incrémente les secondes
+        # Increments seconds
         if secs >= 60:
             secs = 0
             mins += 1
 
-        # Incrémente les minutes
+        # Increments minutes
         if mins >= 60:
             mins = 0
             hours += 1
 
-        # Incrémente les heures
-        if hours >= 24:  # Boucle après 24 heures
+        #  Increments hours
+        if hours >= 24:  # Loop after 24 hours
             hours = 0
 
    
 
 def set_current_time(new_hours, new_minutes):
-    """Met à jour l'heure du chronomètre."""
+    """Updates the Chronometer time."""
     global hours, mins, secs
     hours = new_hours % 24
     mins = new_minutes % 60
-    secs = 0  # Réinitialiser les secondes à 0
+    secs = 0  # Reset seconds to 0
     
 def set_current_time_wifi(new_hours, new_minutes, new_secondes):
-    """Met à jour l'heure du chronomètre."""
+    """Updates the Chronometer time with wifi time."""
     global hours, mins, secs
     hours = new_hours % 24
     mins = new_minutes % 60
-    secs = new_secondes % 60  # Réinitialiser les secondes à 0
+    secs = new_secondes % 60  # Reset seconds to 0
 
 def get_current_time():
-    """Retourne l'heure actuelle sous forme de tuple (heures, minutes)."""
+    """Returns the current time as a tuple (hours, minutes)."""
     global hours, mins
     return hours, mins
 
-# === Initialisation ===
-tenths = 0  # Centièmes de seconde
-secs = 0    # Secondes
+# Initialization
+tenths = 0  
+secs = 0    # Seconds
 mins = 0    # Minutes
-hours = 0   # Heures
-colon_state = True  # État des deux points clignotants
+hours = 0   # Hours
+colon_state = True  # States of the two flashing dots
 
-# Définir le timer à 100ms
+# Set the timer to 100ms
 tim = Timer(0)
 tim.init(period=100, mode=Timer.PERIODIC, callback=stopwatch_100ms)
+
+
+
 
 
 
