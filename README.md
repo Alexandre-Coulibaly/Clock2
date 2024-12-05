@@ -36,7 +36,8 @@ Four 7-Segment Display :
 
 -Two central LEDs to separate the left and right groups (as in a digital clock).
 
-![image](https://github.com/user-attachments/assets/23b65dbe-8a15-4b9d-ad10-8270bfe25553)
+![image](https://github.com/user-attachments/assets/c88764c8-9ace-42a7-80a7-ad56f28f499a)
+
 
 
 
