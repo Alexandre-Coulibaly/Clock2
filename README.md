@@ -279,5 +279,5 @@ After initializing the alarm, if we hit the time set, the "[alarm](https://githu
 - Project from past years for the operation of the different phases and modes that each button has
 - [Wokwi](https://wokwi.com/esp32) code to compare and correct some errors in our codes
 - [ChatGPT](https://chatgpt.com/) to correct some errors in our codes
--[NEOPIXEL](https://www.vokolo.cz/rubriky/navody/navod-na-stavbu-hodin-neopixsegment/) display page 
+- [NEOPIXEL](https://www.vokolo.cz/rubriky/navody/navod-na-stavbu-hodin-neopixsegment/) display page 
 
