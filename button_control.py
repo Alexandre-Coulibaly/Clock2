@@ -20,21 +20,21 @@ class ButtonController:
         self.currenthold_brightness = BRIGHTNESS  
         self.current_timezone = 0
         self.timezones = [
-            0,
+            5,
             1,
-            -6,
-            3,
-            9,
-            -8
+            2,
+            6,
+            7,
+            3
         ]
         
         self.city = [
             {"London"},
             {"Paris" },
-            {"New York" },
             {"Moscow" },
             {"Tokyo" },
-            {"Los Angeles" }
+            {"Los Angeles" },
+            {"New York" }
         ]
 
 
@@ -210,8 +210,3 @@ class ButtonController:
             "alarm_time": f"{self.alarm_hour:02}:{self.alarm_minute:02}",
             "alarm_active": self.alarm_active,
         }
-
-
-
-
-
