@@ -141,7 +141,7 @@ With ```display_digit``` we configure the LEDs to display the corresponding digi
 
 ---------------------------------------------------------------------------------------------------------------
 
-We will now take a look at the "[timer](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/timer.py)" class. This class configures a stopwatch that tracks elapsed time in hundredths of a second, seconds, minutes and hours, and allows setting and viewing of the current time.
+We will now take a look at the "[chrono](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/chrono.py)" class. This class configures a stopwatch that tracks elapsed time in hundredths of a second, seconds, minutes and hours, and allows setting and viewing of the current time.
 
 The function ```stopwatch_100ms``` is called every 100 milliseconds by the timer. It increments the tenths of a second (```tenths```). When it reaches 10, it resets to 0 and increments the seconds (```secs```). Similarly, it manages the incrementation of minutes (```mins```) and hours (```hours```), looping after 24 hours.
 
