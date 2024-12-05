@@ -6,7 +6,7 @@ from wifi import connect, get_wifi_time
 
 class ButtonController:
     def __init__(self):
-        # Variables pour suivre l'état
+        # Variables
         self.current_mode = "normal"  # Modes : "normal", "set_time", "set_alarm", "set_color"
         self.currenthold_hour = 0
         self.currenthold_minute =0
@@ -17,7 +17,7 @@ class ButtonController:
         self.alarmhold_minute = 0
         self.alarm_active = False
         self.current_color =0
-        self.currenthold_brightness = BRIGHTNESS  # Luminosité 
+        self.currenthold_brightness = BRIGHTNESS  
         self.current_timezone = 0
         self.timezones = [
             0,
@@ -29,100 +29,103 @@ class ButtonController:
         ]
         
         self.city = [
-            {"Londre"},
+            {"London"},
             {"Paris" },
-            {"New york" },
-            {"Moscou" },
+            {"New York" },
+            {"Moscow" },
             {"Tokyo" },
             {"Los Angeles" }
         ]
 
 
-        # === Liste des couleurs disponibles ===
+        # List of available colors
         self.AVAILABLE_COLORS = [
-            (50, 50, 50), # Blanc
-            (50, 0, 0),  # Rouge
-            (0, 50, 0),  # Vert
-            (0, 0, 50),  # Bleu
-            (50, 50, 0), # Jaune
+            (50, 50, 50), # white
+            (50, 0, 0),  # Red
+            (0, 50, 0),  # Green
+            (0, 0, 50),  # Blue
+            (50, 50, 0), # Yellow
             (50, 0, 50), # Magenta
             (0, 50, 50), # Cyan
         ]
 
 
-    def handle_button_press(self, button):
+    def handle_button_press(self, button):  
         """
-        Gère les actions des boutons en fonction du mode actuel.
+        Manages button actions based on the current mode.
 
-        :param button: Numéro du bouton pressé (1 à 5)
+        :param button: Button number pressed (1 to 5)
         """
         if self.current_mode == "normal":
             if button == 1:
-                self.alarm_active = not self.alarm_active  # Activer/Désactiver l'alarme
-                print(f"Alarme {'activée' if self.alarm_active else 'désactivée'}")
+                self.alarm_active = not self.alarm_active  # Enable/Disable Alarm
+                print(f"Alarm {'Enable' if self.alarm_active else 'Disable'}")
                 
             elif button == 2:
-                self.current_mode = "set_time"  # Passer en mode "Set Time"
-                print("Entrée dans le mode réglage de l'heure")
+                self.current_mode = "set_time"  # Pass to mode "Set Time"
+                print("Entering Set Time Mode")
                 hours, minutes = get_current_time()
                 self.currenthold_hour = hours
                 self.currenthold_minute = minutes
                 
             elif button == 3:
-                self.current_mode = "set_alarm"  # Passer en mode "Set Alarm"
-                print("Entrée dans le mode réglage de l'alarme")
+                self.current_mode = "set_alarm"  # Pass to mode "Set Alarm"
+                print("Entering Set Alarm Mode")
                 self.alarmhold_hour = self.alarm_hour
                 self.alarmhold_minute = self.alarm_minute
                 
                 
             elif button == 4:
-                self.current_mode = "set_color"  # Passer en mode "Set Alarm"
-                print("Entrée dans le mode réglage de des couleurs")
+                self.current_mode = "set_color"  # Pass to mode "Set Color"
+                print("Entering Set Color Mode")
                 
             elif button == 5:
-                self.current_mode = "set_UTC"  # Passer en mode "Set Alarm"
-                print("Entrée dans le mode réglage du temps UTC")
+                self.current_mode = "set_UTC"  # Passer en mode "Set UTC"
+                print("Entering Set UTC Mode")
+                hours, minutes = get_current_time()
+                self.currenthold_hour = hours
+                self.currenthold_minute = minutes
                 
    
         elif self.current_mode == "set_time":
             if button == 2:
-                self.currenthold_hour = (self.currenthold_hour + 1) % 24  # Augmenter l'heure
-                print(f"nouvelle Heure : {self.currenthold_hour}")
+                self.currenthold_hour = (self.currenthold_hour + 1) % 24  # increase Hours
+                print(f"New hours : {self.currenthold_hour}")
                  
             elif button == 3:
-                self.currenthold_minute = (self.currenthold_minute + 1) % 60  # Augmenter les minutes
-                print(f"nouvelle Minutes : {self.currenthold_minute}")
+                self.currenthold_minute = (self.currenthold_minute + 1) % 60  # Increase minutes
+                print(f"New Minutes : {self.currenthold_minute}")
                  
             elif button == 4:
                 set_current_time(self.currenthold_hour, self.currenthold_minute)
-                self.current_mode = "normal"  # Valider les changements
-                print("Heure réglée, retour au mode normal")
+                self.current_mode = "normal"  # Validate changes
+                print("Time set, return to normal mode")
                  
             elif button == 5:
-                self.current_mode = "normal"  # Annuler et revenir au mode normal
-                print("Annulation des changements, retour au mode normal")
+                self.current_mode = "normal"  # Cancel and return to normal mode
+                print("Cancel changes, return to normal model")
                  
 
         elif self.current_mode == "set_alarm":
             if button == 2:
-                self.alarmhold_hour = (self.alarmhold_hour + 1) % 24  # Augmenter l'heure de l'alarme
-                print(f"Alarme - Heure : {self.alarmhold_hour}")
+                self.alarmhold_hour = (self.alarmhold_hour + 1) % 24  #increase alarm hours
+                print(f"Alarme - Hours : {self.alarmhold_hour}")
                  
             elif button == 3:
-                self.alarmhold_minute = (self.alarmhold_minute + 1) % 60  # Augmenter les minutes de l'alarme
-                print(f"Alarme - Minutes : {self.alarmhold_minute}")
+                self.alarmhold_minute = (self.alarmhold_minute + 1) % 60  # increase alarm minutes
+                print(f"Alarm - Minutes : {self.alarmhold_minute}")
                  
             elif button == 4:
                 self.alarm_hour = self.alarmhold_hour
                 self.alarm_minute = self.alarmhold_minute
-                self.current_mode = "normal"  # Valider les changements
-                print("Alarme réglée, retour au mode normal")
+                self.current_mode = "normal"  # Validate changes
+                print("Alarm set, back to normal mode")
                  
             elif button == 5:
                 self.alarmhold_hour = self.alarm_hour
                 self.alarmhold_minute = self.alarm_minute
-                self.current_mode = "normal"  # Annuler et revenir au mode normal
-                print("Annulation des réglages de l'alarme, retour au mode normal")
+                self.current_mode = "normal"  # Cancel and return to normal mode
+                print("Cancel alarm settings, return to normal mode")
                  
                
              
@@ -130,30 +133,30 @@ class ButtonController:
                
         elif self.current_mode == "set_color":
             if button == 2:
-                print(f"changement luminossité: {}")
+                print(f"Change Color: {}")
                 #color
                 self.current_color = (self.current_color + 1) % len(self.AVAILABLE_COLORS)
-                set_color(self.AVAILABLE_COLORS[self.current_color])  # Applique la couleur temporairement
+                set_color(self.AVAILABLE_COLORS[self.current_color])  # Apply Color 
 
                  
             if button == 3:
                 #brightness
                 self.currenthold_brightness += 0.1
-                if self.currenthold_brightness > 1.0:  # Si la luminosité dépasse 1.0
-                    self.currenthold_brightness = 0.2  # Revenir à la valeur minimale (0.1)
+                if self.currenthold_brightness > 1.0:  #  If the brightness exceeds 1.0
+                    self.currenthold_brightness = 0.2  # come back at 0.2
                 set_brightness(self.currenthold_brightness)
-                print(f"changement luminosité {}")
+                print(f"Changing Brightness {}")
                  
             if button == 4:
                 #valide
-                print(f"retour: {}")
-                self.current_mode = "normal"  # Annuler et revenir au mode normal
+                print(f"return: {}")
+                self.current_mode = "normal"  #return to normal mode
                 
                  
             if button == 5:
                 #annule
-                print(f"retour: {}")
-                self.current_mode = "normal"
+                print(f"return: {}")
+                self.current_mode = "normal" #return to normal mode
                  
                
                
@@ -161,7 +164,7 @@ class ButtonController:
                
         elif self.current_mode == "set_UTC":
             if button == 2:
-                print("Tentative de synchronisation via Wifi")
+                print("Attempting to sync over Wi-Fi")
                 connect('T Moch', 'Pignoufs')
                 self.currenthold_hour, self.currenthold_minute, self.currenthold_seconde  = get_wifi_time()
             
@@ -172,33 +175,33 @@ class ButtonController:
                 hours = self.timezones[self.current_timezone]
                 city = self.city[self.current_timezone]
 
-                # Ajuste l'heure pour le fuseau horaire
+                # Adjusts the time for the time zone
                 self.currenthold_hour = (self.currenthold_hour + hours) % 24
                 
-                print(f"Fuseau horaire changé : {city} ({hours:+}H)")
-                print(f"Heure affichée : {self.currenthold_hour:02}:{self.currenthold_minute:02}")
+                print(f"Time zone changed : {city} ({hours:+}H)")
+                print(f"Displayed time : {self.currenthold_hour:02}:{self.currenthold_minute:02}")
                  
 
 
     
     
             if button == 4:
-                #valide
-                print(f"validation de l’heure wifi")
+                #validate
+                print(f"Validation of the new wifi time")
                 set_current_time_wifi(self.currenthold_hour, self.currenthold_minute, self.currenthold_seconde)
-                self.current_mode = "normal"  # Annuler et revenir au mode normal
+                self.current_mode = "normal"  # Validate and return to normal mode
                 
                  
             if button == 5:
                 #annule
-                print(f"annulation de l’heure wifi")
-                self.current_mode = "normal"  # Annuler et revenir au mode normal
+                print(f"Cancel new wifi time")
+                self.current_mode = "normal"  # Cancel and return to normal mode
                  
           
 
     def get_current_state(self):
         """
-        Retourne l'état actuel de l'horloge pour affichage ou vérification.
+        Returns the current state of the clock for display or verification.
         """
         hours, minutes = get_current_time()
         return {
@@ -207,7 +210,6 @@ class ButtonController:
             "alarm_time": f"{self.alarm_hour:02}:{self.alarm_minute:02}",
             "alarm_active": self.alarm_active,
         }
-
 
 
 
