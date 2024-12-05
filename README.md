@@ -62,10 +62,6 @@ Key Features :
 
 -Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
 
-![image](https://github.com/user-attachments/assets/1350bd51-b984-4178-8997-7763c72f3778)
-
-
-
 
 ## Software description :
 
@@ -234,6 +230,8 @@ ________________________________________________________________________________
 
 
 ![image](https://github.com/user-attachments/assets/1a78f72c-ee06-40c9-b1fd-e4da43d91065)
+
+After initializing the alarm, if we hit the time set, the "[alarm](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/alarm.py)" begins in loop. To stop it, we need to push the sixth button.
 
 ![image](https://github.com/user-attachments/assets/1350bd51-b984-4178-8997-7763c72f3778)
 
