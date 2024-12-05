@@ -5,8 +5,8 @@ import time
 
 
 # Configuration Wi-Fi
-WIFI_SSID = 'T Moch'
-WIFI_PASSWORD = 'Pignoufs'
+WIFI_SSID = 'WIFI_name'
+WIFI_PASSWORD = 'WIFI_PASSWORD'
 
 
 
