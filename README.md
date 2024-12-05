@@ -21,7 +21,7 @@ ESP32 Board :
 Microcontroller with high performance, low power consumption and built-in Wi-Fi/Bluetooth capabilities, which can also enable future enhancements such as time synchronization via the internet.
 
 ---------------------------------------------------------------------------------------------------------------
-Four 7-Segment Display :
+<u>Four 7-Segment Display :</u>
 
 8 digits, each made up of 14 LEDs 
 
