@@ -36,17 +36,17 @@ Buttons :
 
 for user interaction:
 
-Set the time/alarm
+-Set the time/alarm
 
-Enable/Disable the alarm
+-Enable/Disable the alarm
 
-Change the led's color
+-Change the led's color
 
-Change the brigthness
+-Change the brigthness
 
-Reset the system
+-Reset the system
 
-Emits a sound to indicate an alarm or specific events
+-Emits a sound to indicate an alarm or specific events
 
 ![image](https://github.com/user-attachments/assets/d35c2e6c-c947-4def-bcbb-e585f434bf03)
 
@@ -54,13 +54,13 @@ Emits a sound to indicate an alarm or specific events
 ---------------------------------------------------------------------------------------------------------------
 Key Features :
 
-Time Display: The 7-segment display shows the time, with the central LEDs separating hours and minutes.
+-Time Display: The 7-segment display shows the time, with the central LEDs separating hours and minutes.
 
-Button Control: Buttons allow for time configuration, alarm management and specific changes.
+-Button Control: Buttons allow for time configuration, alarm management and specific changes.
 
-Sound Alarm: The buzzer produces a configurable sound for the alarm.
+-Sound Alarm: The buzzer produces a configurable sound for the alarm.
 
-Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
+-Connectivity (Optional): Extendable with Wi-Fi features and Time zone.
 
 ![image](https://github.com/user-attachments/assets/1350bd51-b984-4178-8997-7763c72f3778)
 
@@ -73,17 +73,17 @@ First we have the "[main](https://github.com/Alexandre-Coulibaly/Clock2/blob/mai
 
 Thanks to this, we can:
 
-Flash the colon every 500 ms.
+-Flash the colon every 500 ms.
 
-Check if a button is pressed and manage the corresponding actions.
+-Check if a button is pressed and manage the corresponding actions.
 
-Check whether the current time corresponds to the alarm time and trigger it if necessary.
+-Check whether the current time corresponds to the alarm time and trigger it if necessary.
 
-Change display brightness at specific times.
+-Change display brightness at specific times.
 
-Update the time display at each loop iteration.
+-Update the time display at each loop iteration.
 
-Each function calls other classes to execute the corresponding operations.
+-Each function calls other classes to execute the corresponding operations.
 
 ---------------------------------------------------------------------------------------------------------------
 Then we have the "[alarm](https://github.com/Alexandre-Coulibaly/Clock2/blob/main/alarm.py)" class, which initializes a button and a buzzer, plays a sound with the buzzer, checks whether the button is pressed, and executes an alarm management loop.
