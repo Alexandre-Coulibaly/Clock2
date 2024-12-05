@@ -167,8 +167,7 @@ class ButtonController:
                 print("Attempting to sync over Wi-Fi")
                 connect('T Moch', 'Pignoufs')
                 self.currenthold_hour, self.currenthold_minute, self.currenthold_seconde  = get_wifi_time()
-            
-             
+                self.current_timezone = 0       
             
             if button == 3:
                 self.current_timezone = (self.current_timezone + 1) % len(self.timezones)
