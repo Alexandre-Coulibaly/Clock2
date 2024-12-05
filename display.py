@@ -1,19 +1,17 @@
-import network
-import ntptime
 import utime
 from machine import Pin
 import neopixel
 
-# === Configuration matériel ===
-LED_PIN = 4  # Pin connecté à la ligne DO des LEDs
-NUM_DISPLAYS = 4  # Total des afficheurs (2 pour l'heure + 2 pour les minutes)
-LEDS_PER_DISPLAY = 14  # Nombre de LEDs par afficheur
-TOTAL_LEDS = NUM_DISPLAYS * LEDS_PER_DISPLAY + 2  # Total de LEDs (28 pour les 4 afficheurs + 2 pour les points)
+#Configuration
+LED_PIN = 4  # Pin connected to the DO line of the LEDs
+NUM_DISPLAYS = 4  # total of display (2 hours + 2 for minutes)
+LEDS_PER_DISPLAY = 14  # number of LEDS per display
+TOTAL_LEDS = NUM_DISPLAYS * LEDS_PER_DISPLAY + 2  # Total of LEDs (28 for the 4 display + 2 for the 2 dots)
 
-# Initialisation des LEDs
+#  Initializing LEDs
 np = neopixel.NeoPixel(Pin(LED_PIN, Pin.OUT), TOTAL_LEDS)
 
-# Segment map pour chaque chiffre (14 LEDs par chiffre)
+# Segment map for every number (14 LEDs per digit)
 SEGMENT_MAP = {
     0: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
     1: [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
@@ -29,79 +27,80 @@ SEGMENT_MAP = {
 
 
 
-# === Réglage de la luminosité ===
+# setting Brightness
 BRIGHTNESS = 0.2  # Réglez la luminosité (0.0 = éteint, 1.0 = plein éclairage)
 CURRENT_COLOR = (50, 50, 50)
 
 
 
-# === Gestion de l'affichage des LEDs ===
+# LED display management
 def display_digit(digit, display_index):
-    """Affiche un chiffre sur un afficheur spécifique."""
+    """Displays a number on a specific display."""
     config = SEGMENT_MAP[digit]
-    # Compense l'offset des LEDs des deux points clignotants
+    # Compensates for the offset of the LEDs of the two flashing points
     start_index = display_index * LEDS_PER_DISPLAY
     if display_index >= 2:
-        start_index += 2  # Décale de 2 LEDs pour éviter les deux points
+        start_index += 2  # Offset of 2 LEDs to avoid the two dots
 
     if start_index + LEDS_PER_DISPLAY > TOTAL_LEDS:
-        raise IndexError("L'indice dépasse le nombre total de LEDs configurées.")
+        raise IndexError("The index exceeds the total number of configured LEDs.")
 
 
     for i in range(LEDS_PER_DISPLAY):
-        # Allume ou éteint la LED correspondante avec luminosité ajustée
+        # Turns the corresponding LED on or off with adjusted brightness
         color = CURRENT_COLOR if config[i] else (0, 0, 0)
         np[start_index + i] = apply_brightness(color)
     np.write()
 
 def display_minutes(minutes):
-    """Affiche les minutes sur les deux afficheurs."""
+    """Displays the minutes on both displays."""
     display_digit(minutes // 10, 2)  # Dizaine des minutes
     display_digit(minutes % 10, 3)  # Unité des minutes
 
 def display_hours(hours):
-    """Affiche les heures sur les deux afficheurs."""
+    """Displays the times on both displays."""
     display_digit(hours // 10, 0)  # Dizaine des heures
     display_digit(hours % 10, 1)  # Unité des heures
 
 def display_colon(state):
-    """Affiche les deux points entre les heures et les minutes."""
-    # Clignote les 2 LEDs des points (indices 28 et 29)
+    """Displays the colon between the hours and minutes."""
+    # Flashes the 2 LEDs of the dots (index 28 and 29)
     color = apply_brightness(CURRENT_COLOR) if state else (0, 0, 0)
     np[28] = color  # LED 1 pour le point
     np[29] = color  # LED 2 pour le point
     np.write()
 
-# === Gestion de la couleur ===
+# Color Setting
 def set_color(color):
-    """Change la couleur globale."""
+    """ Changes the overall color."""
     global CURRENT_COLOR
     CURRENT_COLOR = color
     apply_color_to_leds(color)
-    print(f"Nouvelle couleur : {CURRENT_COLOR}")
+    print(f"New color : {CURRENT_COLOR}")
 
 def set_brightness(level):
-    """Change la luminosité globale."""
+    """Changes the overall brightness."""
     global BRIGHTNESS
-    BRIGHTNESS = max(0.1, min(level, 1.0))  # Garde la luminosité dans une plage valide
-    print(f"Nouvelle luminosité : {BRIGHTNESS}")
+    BRIGHTNESS = max(0.1, min(level, 1.0))  # Keeps brightness within a valid range
+    print(f"New Brightness : {BRIGHTNESS}")
 
 
 
 def apply_color_to_leds(color):
     """
-    Applique une couleur (ajustée en luminosité) à toutes les LEDs.
-    :param color: Tuple RGB (par exemple, (50, 0, 0)).
+    Applies a color (adjusted in brightness) to all LEDs.
+    :param color: Tuple RGB (for example, (50, 0, 0)).
     """
     for i in range(len(np)):
         np[i] = apply_brightness(color)
     np.write()
 
 def apply_brightness(color):
-    """Ajuste la luminosité d'une couleur RGB."""
+    """Adjusts the brightness of an RGB color."""
     return tuple(int(c * BRIGHTNESS) for c in color)
 
 def get_BRIGHTNESS():
-    return BRIGHTNESS
+    return BRIGHTNESS  #give the actual brightness
+
 
 
