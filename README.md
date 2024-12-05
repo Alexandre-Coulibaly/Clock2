@@ -260,7 +260,7 @@ ________________________________________________________________________________
  
   2 : Connexion to WIFI to change the clock 
  
-  3 : Add 1 minute
+  3 : Change Time Zone
  
   4 : Validate changes and switch to NORMAL MODE
   
@@ -268,7 +268,8 @@ ________________________________________________________________________________
   
   6 :
 
-
+  Disclaimer to change time zone you must first connect to the wifi to get the time reset to UTC 0.
+  
 ![image](https://github.com/user-attachments/assets/bd4785e9-8bfd-41d3-9d6a-736390044f2e)
 
 
